@@ -57,6 +57,7 @@ getJSON("/api/data",
         // Data manipulation 4 charting
         var labels = data.map(({ datetime }) => datetime);
         var temp = data.map(({ temperature }) => temperature);
+        // stupid fx to keep a decent visualization with (bad) testing data. 
         var humidity = data.map(({ humidity }) => (humidity < 3000) ? humidity : humidity / 50);
 
         // Actual call to create the chart(s)
