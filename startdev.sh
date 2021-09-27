@@ -18,4 +18,4 @@ cd $CURR_DIR
 
 export DATA_FILE=$CURR_DIR$FILE_NAME
 
-flask run
+flask run --host=0.0.0.0 --port=5000
