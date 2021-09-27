@@ -1,2 +1,2 @@
-# beehappy
-Simple data visualization for ELTE DSD project.
+# BeeHappy
+Simple data visualization for ELTE DSD agricultural project.
