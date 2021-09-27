@@ -3,14 +3,16 @@ import json
 
 import beehappy
 from beehappy import app
+import config
 
 
+# Route to Home Page
 @app.route("/")
 def home():
-    return render_template('base.html', page_title='BeeHappy!')
+    return render_template('base.html', page_title=config.WEBSITE_TITLE)
 
-
-@app.route("/data")
+# Simple route for data 
+@app.route("/api/data")
 def data():
     with open(beehappy.DATA_FILE) as fobj:
         lns=[ i for i in fobj.read().splitlines() ]

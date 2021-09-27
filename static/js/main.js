@@ -1,3 +1,4 @@
+// GET request handler
 var getJSON = function (url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -12,6 +13,8 @@ var getJSON = function (url, callback) {
     };
     xhr.send();
 };
+
+// actual chart builder
 function build_charts(labels, temp, humidity) {
     var chart = new Chart(document.getElementById("line-chart"), {
         type: 'line',
@@ -45,16 +48,18 @@ function build_charts(labels, temp, humidity) {
     });
 
 }
-// Main Calls
+// ================
+// == Main Call ==
+// ================
 
-getJSON("/data",
+getJSON("/api/data",
     function (err, data) {
+        // Data manipulation 4 charting
         var labels = data.map(({ datetime }) => datetime);
         var temp = data.map(({ temperature }) => temperature);
         var humidity = data.map(({ humidity }) => (humidity < 3000) ? humidity : humidity / 50);
 
-        console.log(temp)
-        console.log(humidity)
+        // Actual call to create the chart(s)
         build_charts(labels, temp, humidity)
 
     });
