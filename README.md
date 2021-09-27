@@ -6,7 +6,7 @@ Simple data visualization for *ELTE DSD Smart Agricolture* project.
 Make sure to have python 3.x installed along with pip3
 
 #### Get the Code:
-`git clone ` 
+`git clone https://github.com/andreagalloni92/beehappy.git` 
 
 #### Install Dependencies:
 `pip3 install -r requirements.txt`
